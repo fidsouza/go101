@@ -1,48 +1,33 @@
 package main
 
-import (
-	"fmt"
-	"log"
-	"os"
-)
+import "fmt"
 
-func lancarMoeda(lado string) {
-	var cara, coroa int
-	switch lado {
-	case "cara":
-		cara++
-	case "coroa":
-		coroa++
-	default:
-		fmt.Println("Caiu em pe")
+func main() {
+	nomes := []string{"filipe", "joao", "thiago"}
+	for i := 0; i < len(nomes); i++ {
+		fmt.Println(nomes[i])
+
+	}
+	loops()
+	loops2()
+
+}
+
+func loops() {
+	nomes := []string{"filipe", "joao", "thiago"}
+	for _, nome := range nomes {
+		fmt.Println("segunda forma", nome)
+
 	}
 
 }
 
-func main() {
-	a, b := 10, 10
-
-	if a > b {
-		fmt.Println(" a e maior que b")
-	} else if a < b {
-		fmt.Println(" a e menor que b")
-	} else {
-		fmt.Println("a igual a b ")
+func loops2() {
+	nomes := []string{"filipe", "joao", "thiago"}
+	var i int
+	for i < len(nomes) {
+		fmt.Println("terceira forma", nomes[i])
+		i++
 	}
-
-	file, err := os.Open("hello.txt")
-
-	if err != nil {
-		log.Panic(err)
-	}
-
-	data := make([]byte, 100)
-	if _, err := file.Read(data); err != nil {
-		log.Panic(err)
-	}
-
-	fmt.Println(string(data))
-
-	lancarMoeda("empe")
 
 }
